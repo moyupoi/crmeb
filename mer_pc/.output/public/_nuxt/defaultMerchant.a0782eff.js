@@ -1,0 +1,1 @@
+const e=()=>({captcha:"",categoryId:null,handlingFee:0,name:"",phone:"",qualificationPicture:"",realName:"",typeId:null,keywords:""}),r=()=>({keyword:"",priceOrder:"",salesOrder:"",page:1,limit:20,cid:null,merId:null,minPrice:null,maxPrice:null});export{e as merchantFormDefault,r as merchantProductSeachDefault};

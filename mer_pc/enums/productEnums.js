@@ -1,0 +1,31 @@
+/**
+ * 营销类型
+ */
+export const ProductMarketingTypeEnum = {
+  Normal: 0, //基础商品
+  Seckill: 1, //秒杀
+  Groupbuying: 2, //拼团
+}
+
+/**
+ * 基础类型 商品类型
+ */
+export const ProductTypeEnum = {
+  Normal: 0, //基础商品
+  Integral: 1, //积分
+  Fictitious: 2, //虚拟,
+  Video: 4, //视频号
+  CloudDrive: 5, //云盘商品
+  CardPassword: 6, //卡密商品
+  Reservation: 7, //预约商品
+}
+
+/**
+ * 基础类型 商品类型
+ */
+export const RefundStatusEnum = {
+  未退款: 0,
+  申请中: 1,
+  退款中: 2,
+  已退款: 3,
+}

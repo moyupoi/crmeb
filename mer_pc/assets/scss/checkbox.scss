@@ -1,0 +1,66 @@
+/* 单选框和多选框 */
+.checkbox-wrapper {
+  position: relative;
+  input {
+    display: none;
+  }
+  .icon {
+    position: relative;
+    left: 0px;
+    top: 7px;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  input:checked + .icon {
+    background-color: #e93323;
+    border-color: #e93323;
+    background-image: url("../images/enter.png");
+    -webkit-background-size: 10px 8px;
+    -moz-background-size: 10px 8px;
+    background-size: 10px 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+
+.Checkbox {
+  position: absolute;
+  visibility: hidden;
+  outline: none;
+  background: #fff;
+}
+.Checkbox+label {
+  position:absolute;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #9B9B9B;
+  border-radius: 50%;
+  background-color:#fff;
+  left: 11px;
+  top: 50%;
+  margin-top: -8px;
+}
+.Checkbox:checked+label:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top:3px;
+  width: 6px;
+  height: 3px;
+  border: 2px solid #9B9B9B;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}

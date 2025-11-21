@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'oppoSans-R';
+    src: url('./OPPOSans-R.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'oppoSans-M';
+    src: url('./OPPOSans-M.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'dinProSemiBold';
+    src: url('./D-DIN-PRO-600-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'dinProRegular';
+    src: url('./D-DIN-PRO-400-Regular.ttf');
+}
+@font-face {
+    font-family: 'alimama';
+    src: url('alimamashuheiti.ttf') format('truetype');
+}
+.dinProSemiBold{
+    font-family: 'dinProSemiBold';
+}
+.dinProRegular{
+    font-family: 'dinProRegular';
+}
+.alimama{
+    font-family: 'alimama';
+}
+.oppoSans-M{
+    font-family: 'oppoSans-M';
+    font-weight: 500;
+}
+.oppoSans-R{
+    font-family: 'oppoSans-R';
+}

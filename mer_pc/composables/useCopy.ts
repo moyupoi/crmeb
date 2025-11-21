@@ -1,0 +1,37 @@
+import feedback from "~/utils/feedback";
+
+export function useCopy() {
+    const handleCopy = (text:string) =>{
+        if (navigator.clipboard && window.isSecureContext) {
+            const textToCopy = text
+            navigator.clipboard
+                .writeText(textToCopy)
+                .then(() => {
+                    feedback.msgSuccess('复制成功')
+                })
+                .catch((error) => {
+                    console.error('复制文本时出错:', error)
+                })
+        } else {
+            // 创建text area
+            const textArea = document.createElement('textarea')
+            textArea.value = text
+            // 使text area不在viewport，同时设置不可见
+            document.body.appendChild(textArea)
+            textArea.focus()
+            textArea.select()
+            return new Promise((resolve, reject) => {
+                // 执行复制命令并移除文本框
+                document.execCommand('copy') ? resolve() : reject(new Error('出错了'))
+                textArea.remove()
+            }).then(() => {
+                feedback.msgSuccess('复制成功')
+            }, () => {
+                feedback.msgError('复制失败')
+            })
+        }
+    }
+    return{
+        handleCopy
+    }
+}
