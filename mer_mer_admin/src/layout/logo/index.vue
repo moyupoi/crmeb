@@ -7,7 +7,7 @@
     <img v-if="platMerLoginInfo.leftSquareLogo" class="layout-logo-medium-img" :src="platMerLoginInfo.leftSquareLogo" />
   </div>
   <div class="layout-logo-size" v-else @click="onThemeConfigChange">
-    <img v-if="platMerLoginInfo.leftTopLogo" class="layout-logo-size-img" :src="platMerLoginInfo.leftTopLogo" />
+    <!-- <img v-if="platMerLoginInfo.leftTopLogo" class="layout-logo-size-img" :src="platMerLoginInfo.leftTopLogo" /> -->
   </div>
 </template>
 

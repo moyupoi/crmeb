@@ -263,6 +263,12 @@ export default {
       this.queryParams.name = encodeURIComponent(this.name);
       menuListApi(this.queryParams)
         .then((res) => {
+          debugger;
+          const filterMenu = (data) => {
+            debugger;
+            return data;
+          };
+          res = filterMenu(res);
           let obj = {},
             menuList = [];
           res.forEach((item) => {

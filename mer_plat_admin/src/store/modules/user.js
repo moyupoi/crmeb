@@ -133,7 +133,7 @@ const mutations = {
   childMenuList(state, list) {
     if (isPlatform) {
       state.childMenuList = list;
-    }else{
+    } else {
       state.circleChildMenuList = list;
     }
   },
@@ -296,11 +296,64 @@ const actions = {
     return new Promise(async (resolve, reject) => {
       // 根据环境变量判断调用不同的获取菜单API
       const getMenuApi = isPlatform ? roleApi.menuListApi : areasGetMenusApi;
-      let accessRoutes = await getMenuApi();
 
-      // let accessRoutes = formatRoutes(menusAll);
-      // const accessRoutes = await dispatch('permission/generateRoutes', roles, { root: true });
+      /**
+       * 过滤菜单函数
+       * @param {Array} data - 菜单数据
+       * @returns {Array} 过滤后的菜单数据
+       */
+      const filterMenu = (data) => {
+        // 定义要过滤掉的菜单名称
+        const removeTitles = new Set([
+          // 一级菜单
+          '商户', // 商户全部过滤
+          '营销', // 营销全部过滤
+          '装修', // 装修全部过滤
+
+          // 商品模块下的子菜单
+          '保障服务',
+          '品牌列表',
+
+          // 设置模块下的子菜单
+          '一号通',
+          '应用设置',
+          '公众号',
+          '无效关键词回复',
+        ]);
+
+        /**
+         * 递归过滤函数
+         * @param {Array} list - 菜单列表
+         * @returns {Array} 过滤后的列表
+         */
+        function recursiveFilter(list) {
+          if (!Array.isArray(list)) {
+            return [];
+          }
+
+          return list
+            .filter((item) => !removeTitles.has(item.title)) // 根据title过滤
+            .map((item) => {
+              // 如果有子项，递归过滤子项
+              if (item.children && item.children.length > 0) {
+                return {
+                  ...item,
+                  children: recursiveFilter(item.children),
+                };
+              }
+              return item;
+            });
+        }
+
+        return recursiveFilter(data);
+      };
+
+      let accessRoutes = await getMenuApi();
+      // 过滤菜单
+      accessRoutes = filterMenu(accessRoutes);
+
       commit('SET_MENU_LIST', accessRoutes);
+
       if (isPlatform) {
         let arr = formatFlatteningRoutes(router.options.routes);
         formatTwoStageRoutes(arr);
@@ -320,6 +373,7 @@ const actions = {
         }
         localStorage.setItem('Circle_Admin_oneLvRoutes', JSON.stringify(routes));
       }
+
       resolve(resolve);
     });
   },

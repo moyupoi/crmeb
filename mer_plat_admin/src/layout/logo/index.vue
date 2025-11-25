@@ -7,7 +7,7 @@
     <img v-if="platMerLoginInfo.leftSquareLogo" class="layout-logo-medium-img" :src="platMerLoginInfo.leftSquareLogo" />
   </div>
   <div class="layout-logo-size" v-else @click="onThemeConfigChange">
-    <img v-if="platMerLoginInfo.leftTopLogo" class="layout-logo-size-img" :src="platMerLoginInfo.leftTopLogo" />
+    <!-- <img v-if="platMerLoginInfo.leftTopLogo" class="layout-logo-size-img" :src="platMerLoginInfo.leftTopLogo" /> -->
   </div>
 </template>
 
@@ -18,8 +18,8 @@ export default {
   name: 'layoutLogo',
   computed: {
     //登录后的信息
-    platMerLoginInfo(){
-      return isPlatform ? JSON.parse(Cookies.get('JavaPlatInfo')) : JSON.parse(Cookies.get('CircleJavaPlatInfo'))
+    platMerLoginInfo() {
+      return isPlatform ? JSON.parse(Cookies.get('JavaPlatInfo')) : JSON.parse(Cookies.get('CircleJavaPlatInfo'));
     },
     // 获取布局配置信息
     getThemeConfig() {

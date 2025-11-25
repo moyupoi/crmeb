@@ -154,7 +154,7 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'circle_Dashboard',
-        meta: { title: '主页', icon: 'dashboard'},
+        meta: { title: '主页', icon: 'dashboard' },
       },
     ],
   },
