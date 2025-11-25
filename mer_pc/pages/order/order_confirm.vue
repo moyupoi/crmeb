@@ -443,7 +443,7 @@ const handleGoPage = (id: number) => {
       </div>
       <!--结算信息-->
       <div class="w-100% borRadius bg-#FFF pt-30px pb-20px px-30px">
-        <div v-if="orderType === 0" class="acea-row justify-between mbtom30">
+        <!-- <div v-if="orderType === 0" class="acea-row justify-between mbtom30">
           <div class="text-16px fontColor6">平台优惠</div>
           <div @click="couponTap(orderInfoVo.platCouponUserList, 0, 0, null)" class="fonts16 fontColor333 cursors">
             {{
@@ -458,8 +458,8 @@ const handleGoPage = (id: number) => {
               style="font-size: 12px"
             ></span>
           </div>
-        </div>
-        <div
+        </div> -->
+        <!-- <div
           v-if="orderInfoVo.integralDeductionSwitch && orderType === 0"
           class="acea-row justify-between mbtom30"
         >
@@ -478,7 +478,7 @@ const handleGoPage = (id: number) => {
               </el-radio>
             </el-radio-group>
           </div>
-        </div>
+        </div> -->
         <!--费用详情-->
         <div class="w-1140px borRadius bg-#F7F7F7 px-20px py-20px">
           <div class="acea-row justify-between mb15px">
@@ -493,7 +493,7 @@ const handleGoPage = (id: number) => {
               -￥<span class="">{{ orderInfoVo.svipDiscountPrice }}</span>
             </div>
           </div>
-          <div v-show="orderType === 0" class="acea-row justify-between mb15px">
+          <!-- <div v-show="orderType === 0" class="acea-row justify-between mb15px">
             <div class="text-14px fontColor6">商家优惠</div>
             <div class="text-14px fontColor333">
               -￥<span class="">{{ orderInfoVo.merCouponFee }}</span>
@@ -513,7 +513,7 @@ const handleGoPage = (id: number) => {
             <div class="text-14px fontColor333">
               -￥<span class="">{{ orderInfoVo.deductionPrice || 0 }}</span>
             </div>
-          </div>
+          </div> -->
           <div class="acea-row justify-between">
             <div class="text-14px fontColor6">实付款</div>
             <div class="text-14px font-color fw-600">

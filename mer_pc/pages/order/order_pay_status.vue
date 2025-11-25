@@ -112,7 +112,8 @@ const handlerNuxtLinkOrder = async () => {
       </div>
       <div @click="handlerNuxtLinkOrder" class="handleBtn w-150px h-50px lh-49px text-16px cursors">查看订单</div>
     </div>
-    <recommend></recommend>
+    <!-- 猜你喜欢 -->
+    <!-- <recommend></recommend> -->
   </div>
 </template>
 

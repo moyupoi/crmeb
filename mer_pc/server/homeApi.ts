@@ -34,10 +34,14 @@ export const indexMerchantListApi = (recomdnum: number) => {
 export const pcHomeConfigApi = async () => {
     //return httpRequest.get('front/pc/home/get/config');
   const res = await $request.get({ url: `front/pc/home/get/config` })
-  const { quickEntryList, ...rest } = res
+  const { quickEntryList, philosophyList, ...rest } = res
+  console.log('pcHomeConfigApi', res);
+  
   return {
     ...rest,
-    quickEntryList: quickEntryList.filter((item: any) => item.name !== 'CRMEB'),
+    quickEntryList: quickEntryList.filter((item: any) => !['CRMEB', '商户入驻', '活动中心'].includes(item.name)),
+    homeNavigationList: rest.homeNavigationList.filter((item: any) => !['限时秒杀', '品牌好店', '领券中心','资讯信息', '我的优惠券'].includes(item.name)),
+    philosophyList: [],
   }
 }
 

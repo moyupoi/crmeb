@@ -31,12 +31,12 @@ const menuList = ref<Array<string>>([
     url: '/users/collect_products',
     id: '3',
   },
-  {
-    name: '关注店铺',
-    icon: 'icon-guanzhudianpu',
-    url: '/users/collect_merchant',
-    id: '4',
-  },
+  // {
+  //   name: '关注店铺',
+  //   icon: 'icon-guanzhudianpu',
+  //   url: '/users/collect_merchant',
+  //   id: '4',
+  // },
   {
     name: '我的足迹',
     icon: 'icon-zuji',
@@ -129,14 +129,15 @@ const handlerNuxtLink = async (url: string, type: number) => {
               商户入驻
             </div>
           </div>
-          <div class="flex flex-justify-between w-200px">
+          <div class="flex flex-start w-200px">
             <div
               v-for="(item, index) in menuList"
               :key="index"
               class="flex-col-center cursors"
               @click="handlerNuxtLink(item.url, item.id)"
+              style="margin-right: 20px;"
             >
-              <div class="iconfont font-color mb-8px" :class="item.icon" style="font-size: 18px"></div>
+              <div class="iconfont font-color mb-8px" :class="item.icon" style="font-size: 18px;"></div>
               <div class="text-12px text-#333">{{ item.name }}</div>
             </div>
           </div>

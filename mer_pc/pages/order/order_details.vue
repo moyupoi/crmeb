@@ -270,7 +270,7 @@ const handleConfirmOrder = async () => {
           -<span class="oppoSans-M">￥</span><span class="dinProRegular">{{ orderInfo.merCouponPrice || 0 }}</span>
         </div>
       </div>
-      <div v-show="orderInfo.platCouponPrice > 0" class="acea-row justify-between mb20px">
+      <!-- <div v-show="orderInfo.platCouponPrice > 0" class="acea-row justify-between mb20px">
         <div class="text-14px fontColor6">平台优惠:</div>
         <div class="text-14px fontColor333">
           -<span class="oppoSans-M">￥</span><span class="dinProRegular">{{ orderInfo.platCouponPrice || 0 }}</span>
@@ -281,7 +281,7 @@ const handleConfirmOrder = async () => {
         <div class="text-14px fontColor333">
           -<span class="oppoSans-M">￥</span><span class="dinProRegular">{{ orderInfo.integralPrice || 0 }}</span>
         </div>
-      </div>
+      </div> -->
       <div class="acea-row justify-between">
         <div class="text-14px fontColor6">实付款:</div>
         <div class="text-14px fontColor333">

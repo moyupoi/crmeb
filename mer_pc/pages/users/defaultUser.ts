@@ -46,33 +46,33 @@ export const userMenuDefault = () => {
           id: '3',
           pc_url: '/users/collect_products',
         },
-        {
-          name: '收藏的店铺',
-          id: '4',
-          pc_url: '/users/collect_merchant',
-        },
+        // {
+        //   name: '收藏的店铺',
+        //   id: '4',
+        //   pc_url: '/users/collect_merchant',
+        // },
       ],
     },
-    {
-      name: '我的钱包',
-      child: [
-        {
-          name: '我的余额',
-          id: '5',
-          pc_url: '/users/user_balance',
-        },
-        {
-          name: '我的优惠券',
-          id: '6',
-          pc_url: '/users/user_coupon',
-        },
-        {
-          name: '我的积分',
-          id: '7',
-          pc_url: '/users/user_integral',
-        },
-      ],
-    },
+    // {
+    //   name: '我的钱包',
+    //   child: [
+    //     {
+    //       name: '我的余额',
+    //       id: '5',
+    //       pc_url: '/users/user_balance',
+    //     },
+    //     {
+    //       name: '我的优惠券',
+    //       id: '6',
+    //       pc_url: '/users/user_coupon',
+    //     },
+    //     {
+    //       name: '我的积分',
+    //       id: '7',
+    //       pc_url: '/users/user_integral',
+    //     },
+    //   ],
+    // },
     {
       name: '历史记录',
       child: [

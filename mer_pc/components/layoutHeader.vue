@@ -81,9 +81,9 @@
           <div class="flex flex-justify-between pt-30px">
             <!--logo-->
             <div class="w-303px">
-              <nuxt-link :to="{ path: '/' }"
+              <!-- <nuxt-link :to="{ path: '/' }"
               ><el-image lazy :src="pcHomeCon?.leftTopLogo" class="max-w-303px h38px"></el-image
-              ></nuxt-link>
+              ></nuxt-link> -->
             </div>
             <!--搜索框商品详情页、商户主页-->
             <div
@@ -220,7 +220,6 @@ const props = defineProps({
   }
 })
 const { pcHomeCon,globalData,isShowTop } = toRefs(props)
-
 
 //移动端域名
 const { data: indexDomain } = useAsyncData(() => indexDomainApi())
