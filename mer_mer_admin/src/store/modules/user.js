@@ -114,8 +114,16 @@ const actions = {
           //   reject('getInfo: roles must be a non-null array!');
           // }
 
-          const { roles, account, realName, permissionsList, merStarLevel, merReceiptPrintingSwitch,
-            merId, electrPrintingSwitch } = data;
+          const {
+            roles,
+            account,
+            realName,
+            permissionsList,
+            merStarLevel,
+            merReceiptPrintingSwitch,
+            merId,
+            electrPrintingSwitch,
+          } = data;
           commit('SET_ROLES', roles);
           commit('SET_NAME', realName); //商户名称
           commit('SET_ACCOUNT', account); //账号
@@ -136,12 +144,12 @@ const actions = {
   },
 
   // user handleLogout
-    handleLogout({ commit, state, dispatch }) {
+  handleLogout({ commit, state, dispatch }) {
     Loading.service();
     return new Promise((resolve, reject) => {
       logout(state.token)
         .then(() => {
-         // window.localStorage.clear();
+          // window.localStorage.clear();
           let loadingInstance = Loading.service();
           loadingInstance.close();
           commit('SET_TOKEN', '');
@@ -199,8 +207,87 @@ const actions = {
       return newArr;
     }
 
+    function filterMenu(menuData) {
+      // 定义要过滤掉的菜单名称
+      const removeTitles = new Set([
+        // 商品模块
+        '卡密管理',
+        '保障服务组合',
+        '预约设置',
+        '上门服务',
+        '到店服务',
+
+        // 订单模块
+        '预约单管理',
+        '预约看板',
+        '工单管理',
+
+        // 装修整个模块
+        '装修',
+        '店铺装修',
+
+        // 营销整个模块
+        '营销',
+        '优惠券',
+        '优惠券列表',
+        '领取记录',
+        '秒杀',
+        '秒杀活动',
+        '秒杀商品',
+        '拼团',
+        '拼团活动',
+        '开团记录',
+        '小程序直播',
+        '直播间管理',
+        '直播商品管理',
+        '直播助手',
+        '视频号',
+        '草稿商品',
+        '过审商品',
+
+        // 员工模块
+        '服务人员',
+
+        // 设置模块
+        '商户基本设置',
+        'PC商城设置',
+        '物流管理',
+        '配送员管理',
+
+        // 维护模块
+        '系统表单',
+      ]);
+
+      /**
+       * 递归过滤函数
+       * @param {Array} list - 菜单列表
+       * @returns {Array} 过滤后的列表
+       */
+      function recursiveFilter(list) {
+        if (!Array.isArray(list)) {
+          return [];
+        }
+
+        return list
+          .filter((item) => !removeTitles.has(item.title)) // 根据title过滤
+          .map((item) => {
+            // 如果有子项，递归过滤子项
+            if (item.children && item.children.length > 0) {
+              return {
+                ...item,
+                children: recursiveFilter(item.children),
+              };
+            }
+            return item;
+          });
+      }
+
+      return recursiveFilter(menuData);
+    }
+
     return new Promise(async (resolve, reject) => {
       let accessRoutes = await roleApi.menuListApi();
+      accessRoutes = filterMenu(accessRoutes);
 
       // let accessRoutes = formatRoutes(menusAll);
       // const accessRoutes = await dispatch('permission/generateRoutes', roles, { root: true });

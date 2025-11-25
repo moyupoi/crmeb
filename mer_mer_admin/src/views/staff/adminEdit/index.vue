@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-form ref="editPram" :rules="rules" :model="editPram" label-width="90px">
-      <el-form-item label="关联用户：" prop="uid">
+      <!-- <el-form-item label="关联用户：" prop="uid">
         <div class="upLoadPicBox" @click="userVisible = true">
           <div v-if="editPram.userAvatar" class="pictrue">
             <img :src="editPram.userAvatar" />
@@ -12,8 +12,8 @@
           <div class="nick">{{ editPram.nickname }}</div>
           <div class="from-tips">员工必须在商城关注店铺</div>
         </div>
-      </el-form-item>
-      <el-form-item label="员工头像：" prop="avatar">
+      </el-form-item> -->
+      <!-- <el-form-item label="员工头像：" prop="avatar">
         <div class="upLoadPicBox" @click="modalPicTap(false)">
           <div v-if="editPram.avatar" class="pictrue">
             <img :src="editPram.avatar" />
@@ -23,7 +23,7 @@
           </div>
           <div class="from-tips">用于移动端商家管理工作台展示，建议：80*80PX，大小不超过5KB。</div>
         </div>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="员工姓名：" prop="name">
         <el-input v-model="editPram.name" placeholder="请输入员工姓名" />
       </el-form-item>

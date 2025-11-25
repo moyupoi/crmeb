@@ -1,5 +1,5 @@
 <template>
-  <div class="divBox" style="padding-bottom: 0">
+  <!-- <div class="divBox" style="padding-bottom: 0">
     <el-row :gutter="14" class="ranking">
       <el-col v-bind="grid" class="ivu-mb mb14" v-hasPermi="['merchant:statistics:home:product:pay:ranking']">
         <el-card class="box-card" shadow="never" :bordered="false">
@@ -88,7 +88,7 @@
         </el-card>
       </el-col>
     </el-row>
-  </div>
+  </div> -->
 </template>
 <script>
 // +----------------------------------------------------------------------

@@ -95,7 +95,7 @@ const productRouter = {
           component: () => import('@/views/product/reservation/inStoreService/index'),
           name: 'InStoreService',
           meta: { title: '到店服务', icon: '' },
-        }
+        },
       ],
     },
   ],

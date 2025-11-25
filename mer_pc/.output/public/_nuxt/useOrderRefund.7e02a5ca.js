@@ -1,0 +1,1 @@
+import{M as e}from"./entry.2b04d046.js";import{C as o}from"./orderApi.483dd75c.js";function c(){return{onRevokeRefund:n=>new Promise((r,s)=>{e.confirm("确定要撤销本次退款申请吗？").then(async()=>{await o(n).then(async()=>(await e.msgSuccess("撤销成功"),r()))})})}}export{c as u};
