@@ -52,7 +52,7 @@
 
           <div class="item" @click="handlerNuxtLink('/users/order_list', 1)">我的订单</div>
           <div class="item" @click="handlerNuxtLink('/users/collect_products', 3)">我的收藏</div>
-          <el-dropdown class="user" v-show="globalData.merchantApplySwitch==1">
+          <!-- <el-dropdown class="user" v-show="globalData.merchantApplySwitch==1">
             <span class="el-dropdown-link text-12px item">
               商户入驻
               <el-icon class="el-icon--right">
@@ -69,7 +69,7 @@
                 >
               </el-dropdown-menu>
             </template>
-          </el-dropdown>
+          </el-dropdown> -->
         </div>
       </div>
     </div>

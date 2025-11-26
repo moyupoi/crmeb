@@ -22,7 +22,7 @@ export default {
   name: 'i-copyright',
   data() {
     return {
-      copyright: 'Copyright © 2023 西安众邦网络科技有限公司',
+      copyright: 'Copyright@ 2013-2025北京天青宜合网络技术有限公司京ICP备2025141158号-1',
       copyrightNew: '',
     };
   },
