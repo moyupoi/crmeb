@@ -1,0 +1,1 @@
+import{_ as c}from"./_plugin-vue_export-helper.c27b6911.js";import{c as e,o as t}from"./entry.bfb7886a.js";const o={},r={class:"w-209px seckillCard px-20px"};function s(a,n){return t(),e("div",r)}const l=c(o,[["render",s]]);export{l as default};

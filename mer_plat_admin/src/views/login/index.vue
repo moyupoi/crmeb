@@ -19,8 +19,8 @@
           <img v-else src="../../assets/imgs/laber1.png" />
         </div>
         <div class="page-account-top">
-          <div class="page-account-top-logo">
-            <img :src="loginLogo" alt="logo" />
+          <div class="page-account-top-logo" style="height: 55px">
+            <!-- <img :src="loginLogo" alt="logo" /> -->
           </div>
         </div>
         <el-form
@@ -281,7 +281,7 @@ export default {
     getInfo() {
       if (this.isPlatform) {
         getLoginPicApi().then((res) => {
-          this.leftLogo = res.leftLogo;
+          this.leftLogo = require('@/assets/imgs/homeLeft.png');
           this.loginLogo = res.loginLogo;
           this.backgroundImages = res.backgroundImage;
           localStorage.setItem('platSiteName', res.siteName);
